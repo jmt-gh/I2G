@@ -20,12 +20,21 @@ class TestPListParser < Minitest::Test
     assert_equal '#FAFA25257373', @pl.ansi_1_color
   end
 
-  def test_it_outputs_everything
-    @pl.theme_as_rgb
+  def test_it_can_load_a_theme_with_color_space_definition
+    color_space_theme_path = './test/Hacktober.itermcolors'
+    @pl.load_theme(color_space_theme_path)
+
+    assert_kind_of Hash, @pl.current_theme
   end
 
-  15.times do |number|
-    number += 1
+  def test_it_can_load_a_theme_with_alpha_definition
+    alpha_theme_path = './test/Violet Light.itermcolors'
+    @pl.load_theme(alpha_theme_path)
+
+    assert_kind_of Hash, @pl.current_theme
+  end
+
+  16.times do |number|
     class_eval <<-METHOD, __FILE__, __LINE__ + 1
       def test_it_responds_to_ansi_#{number}_color
         assert_respond_to @pl, :ansi_#{number}_color

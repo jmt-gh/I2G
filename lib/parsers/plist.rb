@@ -7,6 +7,7 @@ module I2G
         @converter = converter
       end
 
+
       def load_theme(theme_path)
         @current_theme = Plist::Plist.parse_xml(theme_path)
       end
@@ -18,8 +19,7 @@ module I2G
       end
 
       # ansi color methods
-      15.times do |number|
-        number += 1
+      16.times do |number|
         class_eval <<-METHOD, __FILE__, __LINE__ + 1
           def ansi_#{number}_color
             converter.convert(current_theme['Ansi #{number} Color'])
