@@ -4,7 +4,7 @@ class TestPListParser < Minitest::Test
   def setup
     @pl = I2G::Parser::Plist.new(I2G::Converter::Dconf.new)
 
-    theme_path = './Molokai.itermcolors'
+    theme_path = './test/Molokai.itermcolors'
     @pl.load_theme(theme_path)
   end
 
