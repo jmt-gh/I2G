@@ -12,7 +12,7 @@ class TestDconfGenerator < Minitest::Test
 
   def teardown
     f = './test/Molokai.dconf'
-    File.delete(f) if File.exists?(f)
+    File.delete(f) if File.exist?(f)
   end
 
   def test_it_is_a_dconf_generator
@@ -28,7 +28,6 @@ class TestDconfGenerator < Minitest::Test
 
     actual = read('./test/Molokai.dconf')
 
-
     assert_equal expected, actual
   end
 
@@ -40,14 +39,13 @@ class TestDconfGenerator < Minitest::Test
 
     actual = read('./test/Molokai.dconf')
 
-
     refute_same expected, actual
   end
 
   def test_it_can_create_a_palette
-    expected = "['#121212121212', '#FAFA25257373', '#9797E1E12323', '#DFDFD4D46060', " + \
-               "'#0F0F7F7FCFCF', '#87870000FFFF', '#4242A7A7CFCF', '#BBBBBBBBBBBB', " + \
-               "'#555555555555', '#F5F566669C9C', '#B0B0E0E05E5E', '#FEFEF2F26C6C', " + \
+    expected = "['#121212121212', '#FAFA25257373', '#9797E1E12323', '#DFDFD4D46060', " \
+               "'#0F0F7F7FCFCF', '#87870000FFFF', '#4242A7A7CFCF', '#BBBBBBBBBBBB', " \
+               "'#555555555555', '#F5F566669C9C', '#B0B0E0E05E5E', '#FEFEF2F26C6C', " \
                "'#0000AFAFFFFF', '#AFAF8787FFFF', '#5050CDCDFEFE', '#FFFFFFFFFFFF']"
     assert_equal expected, @dconf.palette
   end

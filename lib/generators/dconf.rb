@@ -29,7 +29,7 @@ module I2G
           list_of_values << parser.send("ansi_#{number}_color")
         end
 
-        return list_of_values.to_s.gsub('"', '\'')
+        list_of_values.to_s.tr('"', '\'')
       end
 
       private

@@ -7,7 +7,6 @@ module I2G
         @converter = converter
       end
 
-
       def load_theme(theme_path)
         @current_theme = Plist::Plist.parse_xml(theme_path)
       end

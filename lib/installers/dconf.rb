@@ -10,16 +10,14 @@ module I2G
       end
 
       private
+
       private_class_method def self.create_new_profile(uuid)
         current_profile_list = DconfSystemCalls.read('list')
         if current_profile_list.empty?
-          puts "HERE"
           new_profile_list = "['#{uuid}']"
         else
-          puts "THERE"
           new_profile_list = current_profile_list.gsub(/(?<=')(?=\])/, ", '#{uuid}'")
         end
-
         puts "Creating new profile with UUID: #{uuid}"
         puts new_profile_list
         DconfSystemCalls.write('list', new_profile_list)
@@ -35,7 +33,7 @@ module I2G
         uuid = uuid.split("\n").first
         uuid[0..1] = ''
         uuid[-1] = ''
-        return uuid
+        uuid
       end
     end
 
@@ -43,17 +41,17 @@ module I2G
       GNOME_TERMINAL_PATH = '/org/gnome/terminal/legacy/profiles:'.freeze
       def self.read(endpoint)
         puts "Reading #{endpoint}"
-        %x[dconf read #{GNOME_TERMINAL_PATH}/#{endpoint}]
+        `dconf read #{GNOME_TERMINAL_PATH}/#{endpoint}`
       end
 
       def self.write(endpoint, value)
         puts "Writing #{endpoint} with #{value}"
-        %x[dconf write #{GNOME_TERMINAL_PATH}/#{endpoint} "#{value}"]
+        `dconf write #{GNOME_TERMINAL_PATH}/#{endpoint} "#{value}"`
       end
 
       def self.load(value)
         puts "Loading #{GNOME_TERMINAL_PATH} with #{Shellwords.shellescape(value)}"
-        %x[dconf load #{GNOME_TERMINAL_PATH}/ < #{Shellwords.shellescape(value)}]
+        `dconf load #{GNOME_TERMINAL_PATH}/ < #{Shellwords.shellescape(value)}`
       end
     end
   end
