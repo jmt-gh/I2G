@@ -13,11 +13,11 @@ module I2G
 
       private_class_method def self.create_new_profile(uuid)
         current_profile_list = DconfSystemCalls.read('list')
-        if current_profile_list.empty?
-          new_profile_list = "['#{uuid}']"
-        else
-          new_profile_list = current_profile_list.gsub(/(?<=')(?=\])/, ", '#{uuid}'")
-        end
+        new_profile_list = if current_profile_list.empty?
+                             "['#{uuid}']"
+                           else
+                             current_profile_list.gsub(/(?<=')(?=\])/, ", '#{uuid}'")
+                           end
         puts "Creating new profile with UUID: #{uuid}"
         puts new_profile_list
         DconfSystemCalls.write('list', new_profile_list)
