@@ -1,0 +1,9 @@
+[:9d64d629-72b9-40c3-a41e-832faa24af0c]
+foreground-color='#BBBBBBBBBBBB'
+visible-name='Molokai'
+palette=['#121212121212', '#FAFA25257373', '#9797E1E12323', '#DFDFD4D46060', '#0F0F7F7FCFCF', '#87870000FFFF', '#4242A7A7CFCF', '#BBBBBBBBBBBB', '#555555555555', '#F5F566669C9C', '#B0B0E0E05E5E', '#FEFEF2F26C6C', '#0000AFAFFFFF', '#AFAF8787FFFF', '#5050CDCDFEFE', '#FFFFFFFFFFFF']
+use-system-font=false
+use-theme-colors=false
+font='Ubuntu Mono 12'
+use-theme-background=false
+background-color='#121212121212'
