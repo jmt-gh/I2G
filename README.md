@@ -1,4 +1,5 @@
 # I2G
+[![Build Status](https://travis-ci.org/jletizia/I2G.svg?branch=master)](https://travis-ci.org/jletizia/I2G)
 * Issues: [here](https://github.com/jletizia/I2G/issues)
 * Code: [here](https://github.com/jletizia/I2G)
 
