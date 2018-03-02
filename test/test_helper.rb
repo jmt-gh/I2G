@@ -1,5 +1,5 @@
 require 'minitest'
 require 'minitest/autorun'
-require './lib/parsers/plist.rb'
+require './lib/parsers/iterm2.rb'
 require './lib/converters/dconf.rb'
 require './lib/generators/dconf.rb'

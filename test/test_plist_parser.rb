@@ -1,15 +1,15 @@
 require_relative 'test_helper.rb'
 
-class TestPListParser < Minitest::Test
+class TestIterm2Parser < Minitest::Test
   def setup
-    @pl = I2G::Parser::Plist.new(I2G::Converter::Dconf.new)
+    @pl = I2G::Parser::Iterm2.new(I2G::Converter::Dconf.new)
 
     theme_path = './test/Molokai.itermcolors'
     @pl.load_theme(theme_path)
   end
 
-  def test_it_is_a_plist
-    assert_kind_of I2G::Parser::Plist, @pl
+  def test_it_is_an_iterm2_parser
+    assert_kind_of I2G::Parser::Iterm2, @pl
   end
 
   def test_it_can_load_in_theme

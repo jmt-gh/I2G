@@ -1,14 +1,14 @@
 require 'plist'
 module I2G
   module Parser
-    class Plist
+    class Iterm2
       attr_reader :current_theme, :converter
       def initialize(converter)
         @converter = converter
       end
 
       def load_theme(theme_path)
-        @current_theme = Plist::Plist.parse_xml(theme_path)
+        @current_theme = Plist.parse_xml(theme_path)
       end
 
       def theme_as_rgb

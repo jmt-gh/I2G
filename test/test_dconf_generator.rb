@@ -4,7 +4,7 @@ class TestDconfGenerator < Minitest::Test
   def setup
     theme_file = './test/Molokai.itermcolors'
 
-    @parser = I2G::Parser::Plist.new(I2G::Converter::Dconf.new)
+    @parser = I2G::Parser::Iterm2.new(I2G::Converter::Dconf.new)
     @parser.load_theme(theme_file)
 
     @dconf = I2G::Generator::Dconf.new(@parser)
