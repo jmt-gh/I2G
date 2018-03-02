@@ -1,5 +1,7 @@
 # I2G
 [![Build Status](https://travis-ci.org/jletizia/I2G.svg?branch=master)](https://travis-ci.org/jletizia/I2G)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4f97375f416c9430b317/maintainability)](https://codeclimate.com/github/jletizia/I2G/maintainability)
+
 * Issues: [here](https://github.com/jletizia/I2G/issues)
 * Code: [here](https://github.com/jletizia/I2G)
 
