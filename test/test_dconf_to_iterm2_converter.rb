@@ -1,12 +1,12 @@
 require_relative 'test_helper.rb'
 
-class TestDconfConverter < Minitest::Test
+class TestIterm2ToDconfConverter < Minitest::Test
   def setup
-    @dconf = I2G::Converter::Dconf.new
+    @dconf = I2G::Converter::Iterm2ToDconf.new
   end
 
   def test_it_is_a_plist
-    assert_kind_of I2G::Converter::Dconf, @dconf
+    assert_kind_of I2G::Converter::Iterm2ToDconf, @dconf
   end
 
   def test_it_can_convert_real_values_to_dconf

@@ -2,7 +2,7 @@ require_relative 'test_helper.rb'
 
 class TestIterm2Parser < Minitest::Test
   def setup
-    @pl = I2G::Parser::Iterm2.new(I2G::Converter::Dconf.new)
+    @pl = I2G::Parser::Iterm2.new(I2G::Converter::Iterm2ToDconf.new)
 
     theme_path = './test/Molokai.itermcolors'
     @pl.load_theme(theme_path)

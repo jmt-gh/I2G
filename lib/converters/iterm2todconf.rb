@@ -1,6 +1,6 @@
 module I2G
   module Converter
-    class Dconf
+    class Iterm2ToDconf
       def initialize; end
 
       def convert(real_values)
