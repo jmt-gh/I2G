@@ -1,5 +1,5 @@
 require 'minitest'
 require 'minitest/autorun'
 require './lib/parsers/iterm2.rb'
-require './lib/converters/dconf.rb'
+require './lib/converters/iterm2todconf.rb'
 require './lib/generators/dconf.rb'
